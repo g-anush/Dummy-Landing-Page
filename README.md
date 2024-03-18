@@ -8,4 +8,5 @@
     c.Gender fields (radio button),
     d.Skills (JS,React,API,Backend - as a drop down)
     e.Submit button
-   d.On click of submit button a pop-up should appear with message 'You're logged in successfully'
+    f.On click of submit button a pop-up should appear with message 'You're logged in 
+      successfully'
