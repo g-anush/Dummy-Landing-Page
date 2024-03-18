@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Dummy Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="userForm">
+        <h2>User Data</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        
+        <label for="skills">Skills:</label>
+        <select id="skills" name="skills">
+          <option value="" disabled selected>Select your skill</option>  
+          <option value="JS">JavaScript</option>
+          <option value="React">React</option>
+          <option value="API">API</option>
+          <option value="Backend">Backend</option>
+      </select><br><br>
+
+      <!-- Cool animation on submit -->
+      <button type="submit" onclick="showPopup()">Submit</button>
+
+      <!-- Pop-up message -->
+      <!-- Hidden by default -->
+      <div id="popupMessage" style="
+          display:none; 
+          position:absolute; 
+          top:50%; 
+          left:50%; 
+          transform:-50%, -50%; 
+          background:#333; 
+          color:white; 
+          padding:20px; 
+          border-radius:5px;">
+          You're logged in successfully
+      </div>
+
+    </form>
+
+    <!-- Footer with cool hover effect -->
+    <!-- Links change color on hover -->
+    <footer>
+      <nav style="
+          display:flex; 
+          justify-content:center;">
+          <a href="#" style="
+              color:white; 
+              text-decoration:none; 
+              margin-right:20px;">Home</a> |
+          <a href="#" style="
+              color:white; 
+              text-decoration:none; 
+              margin-left:20px;">About us</a>  
+      </nav>  
+    </footer>
+
+    <!-- JavaScript for showing pop-up message -->
+    <!-- Fade in effect on pop-up -->
+    <!-- Using vanilla JavaScript for simplicity -->
+    <script>
+      function showPopup() {
+          var popup = document.getElementById('popupMessage');
+          popup.style.display = 'block';
+          
+          setTimeout(function(){
+              popup.style.opacity = '1';
+              popup.style.transition = 'opacity 1s';
+          },100);
+          
+          setTimeout(function(){
+              popup.style.opacity = '0';
+              popup.style.transition = 'opacity 1s';
+              
+              setTimeout(function(){
+                  popup.style.display = 'none';
+                  popup.style.opacity = '1';
+              },1000);
+              
+          },2000);
+      }
+    </script>
+
+</body>
+</html>
